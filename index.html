@@ -1,0 +1,840 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style type="text/css">
+    :root,
+    :host {
+      --fa-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
+      --fa-font-regular: normal 400 1em/1 "Font Awesome 6 Free";
+      --fa-font-light: normal 300 1em/1 "Font Awesome 6 Pro";
+      --fa-font-thin: normal 100 1em/1 "Font Awesome 6 Pro";
+      --fa-font-duotone: normal 900 1em/1 "Font Awesome 6 Duotone";
+      --fa-font-duotone-regular: normal 400 1em/1 "Font Awesome 6 Duotone";
+      --fa-font-duotone-light: normal 300 1em/1 "Font Awesome 6 Duotone";
+      --fa-font-duotone-thin: normal 100 1em/1 "Font Awesome 6 Duotone";
+      --fa-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+      --fa-font-sharp-solid: normal 900 1em/1 "Font Awesome 6 Sharp";
+      --fa-font-sharp-regular: normal 400 1em/1 "Font Awesome 6 Sharp";
+      --fa-font-sharp-light: normal 300 1em/1 "Font Awesome 6 Sharp";
+      --fa-font-sharp-thin: normal 100 1em/1 "Font Awesome 6 Sharp";
+      --fa-font-sharp-duotone-solid: normal 900 1em/1 "Font Awesome 6 Sharp Duotone";
+      --fa-font-sharp-duotone-regular: normal 400 1em/1 "Font Awesome 6 Sharp Duotone";
+      --fa-font-sharp-duotone-light: normal 300 1em/1 "Font Awesome 6 Sharp Duotone";
+      --fa-font-sharp-duotone-thin: normal 100 1em/1 "Font Awesome 6 Sharp Duotone";
+    }
+
+    svg:not(:root).svg-inline--fa,
+    svg:not(:host).svg-inline--fa {
+      overflow: visible;
+      box-sizing: content-box;
+    }
+
+    .svg-inline--fa {
+      display: var(--fa-display, inline-block);
+      height: 1em;
+      overflow: visible;
+      vertical-align: -0.125em;
+    }
+
+    .svg-inline--fa.fa-2xs {
+      vertical-align: 0.1em;
+    }
+
+    .svg-inline--fa.fa-xs {
+      vertical-align: 0em;
+    }
+
+    .svg-inline--fa.fa-sm {
+      vertical-align: -0.0714286em;
+    }
+
+    .svg-inline--fa.fa-lg {
+      vertical-align: -0.2em;
+    }
+
+    .svg-inline--fa.fa-xl {
+      vertical-align: -0.25em;
+    }
+
+    .svg-inline--fa.fa-2xl {
+      vertical-align: -0.3125em;
+    }
+
+    .svg-inline--fa.fa-pull-left {
+      margin-right: var(--fa-pull-margin, 0.3em);
+      width: auto;
+    }
+
+    .svg-inline--fa.fa-pull-right {
+      margin-left: var(--fa-pull-margin, 0.3em);
+      width: auto;
+    }
+
+    .svg-inline--fa.fa-li {
+      width: var(--fa-li-width, 2em);
+      top: 0.25em;
+    }
+
+    .svg-inline--fa.fa-fw {
+      width: var(--fa-fw-width, 1.25em);
+    }
+
+    .fa-layers svg.svg-inline--fa {
+      inset: 0px;
+      margin: auto;
+      position: absolute;
+    }
+
+    .fa-layers-counter,
+    .fa-layers-text {
+      display: inline-block;
+      position: absolute;
+      text-align: center;
+    }
+
+    .fa-layers {
+      display: inline-block;
+      height: 1em;
+      position: relative;
+      text-align: center;
+      vertical-align: -0.125em;
+      width: 1em;
+    }
+
+    .fa-layers svg.svg-inline--fa {
+      transform-origin: center center 0px;
+    }
+
+    .fa-layers-text {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transform-origin: center center 0px;
+    }
+
+    .fa-layers-counter {
+      background-color: var(--fa-counter-background-color, #ff253a);
+      border-radius: var(--fa-counter-border-radius, 1em);
+      box-sizing: border-box;
+      color: var(--fa-inverse, #fff);
+      line-height: var(--fa-counter-line-height, 1);
+      max-width: var(--fa-counter-max-width, 5em);
+      min-width: var(--fa-counter-min-width, 1.5em);
+      overflow: hidden;
+      padding: var(--fa-counter-padding, 0.25em 0.5em);
+      right: var(--fa-right, 0);
+      text-overflow: ellipsis;
+      top: var(--fa-top, 0);
+      transform: scale(var(--fa-counter-scale, 0.25));
+      transform-origin: right top 0px;
+    }
+
+    .fa-layers-bottom-right {
+      bottom: var(--fa-bottom, 0);
+      right: var(--fa-right, 0);
+      top: auto;
+      transform: scale(var(--fa-layers-scale, 0.25));
+      transform-origin: right bottom 0px;
+    }
+
+    .fa-layers-bottom-left {
+      bottom: var(--fa-bottom, 0);
+      left: var(--fa-left, 0);
+      right: auto;
+      top: auto;
+      transform: scale(var(--fa-layers-scale, 0.25));
+      transform-origin: left bottom 0px;
+    }
+
+    .fa-layers-top-right {
+      top: var(--fa-top, 0);
+      right: var(--fa-right, 0);
+      transform: scale(var(--fa-layers-scale, 0.25));
+      transform-origin: right top 0px;
+    }
+
+    .fa-layers-top-left {
+      left: var(--fa-left, 0);
+      right: auto;
+      top: var(--fa-top, 0);
+      transform: scale(var(--fa-layers-scale, 0.25));
+      transform-origin: left top 0px;
+    }
+
+    .fa-1x {
+      font-size: 1em;
+    }
+
+    .fa-2x {
+      font-size: 2em;
+    }
+
+    .fa-3x {
+      font-size: 3em;
+    }
+
+    .fa-4x {
+      font-size: 4em;
+    }
+
+    .fa-5x {
+      font-size: 5em;
+    }
+
+    .fa-6x {
+      font-size: 6em;
+    }
+
+    .fa-7x {
+      font-size: 7em;
+    }
+
+    .fa-8x {
+      font-size: 8em;
+    }
+
+    .fa-9x {
+      font-size: 9em;
+    }
+
+    .fa-10x {
+      font-size: 10em;
+    }
+
+    .fa-2xs {
+      font-size: 0.625em;
+      line-height: 0.1em;
+      vertical-align: 0.225em;
+    }
+
+    .fa-xs {
+      font-size: 0.75em;
+      line-height: 0.0833333em;
+      vertical-align: 0.125em;
+    }
+
+    .fa-sm {
+      font-size: 0.875em;
+      line-height: 0.0714286em;
+      vertical-align: 0.0535714em;
+    }
+
+    .fa-lg {
+      font-size: 1.25em;
+      line-height: 0.05em;
+      vertical-align: -0.075em;
+    }
+
+    .fa-xl {
+      font-size: 1.5em;
+      line-height: 0.0416667em;
+      vertical-align: -0.125em;
+    }
+
+    .fa-2xl {
+      font-size: 2em;
+      line-height: 0.03125em;
+      vertical-align: -0.1875em;
+    }
+
+    .fa-fw {
+      text-align: center;
+      width: 1.25em;
+    }
+
+    .fa-ul {
+      list-style-type: none;
+      margin-left: var(--fa-li-margin, 2.5em);
+      padding-left: 0px;
+    }
+
+    .fa-ul>li {
+      position: relative;
+    }
+
+    .fa-li {
+      left: calc(-1 * var(--fa-li-width, 2em));
+      position: absolute;
+      text-align: center;
+      width: var(--fa-li-width, 2em);
+      line-height: inherit;
+    }
+
+    .fa-border {
+      border-color: var(--fa-border-color, #eee);
+      border-radius: var(--fa-border-radius, 0.1em);
+      border-style: var(--fa-border-style, solid);
+      border-width: var(--fa-border-width, 0.08em);
+      padding: var(--fa-border-padding, 0.2em 0.25em 0.15em);
+    }
+
+    .fa-pull-left {
+      float: left;
+      margin-right: var(--fa-pull-margin, 0.3em);
+    }
+
+    .fa-pull-right {
+      float: right;
+      margin-left: var(--fa-pull-margin, 0.3em);
+    }
+
+    .fa-beat {
+      animation-name: fa-beat;
+      animation-delay: var(--fa-animation-delay, 0s);
+      animation-direction: var(--fa-animation-direction, normal);
+      animation-duration: var(--fa-animation-duration, 1s);
+      animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+      animation-timing-function: var(--fa-animation-timing, ease-in-out);
+    }
+
+    .fa-bounce {
+      animation-name: fa-bounce;
+      animation-delay: var(--fa-animation-delay, 0s);
+      animation-direction: var(--fa-animation-direction, normal);
+      animation-duration: var(--fa-animation-duration, 1s);
+      animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+      animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.28, 0.84, 0.42, 1));
+    }
+
+    .fa-fade {
+      animation-name: fa-fade;
+      animation-delay: var(--fa-animation-delay, 0s);
+      animation-direction: var(--fa-animation-direction, normal);
+      animation-duration: var(--fa-animation-duration, 1s);
+      animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+      animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+    }
+
+    .fa-beat-fade {
+      animation-name: fa-beat-fade;
+      animation-delay: var(--fa-animation-delay, 0s);
+      animation-direction: var(--fa-animation-direction, normal);
+      animation-duration: var(--fa-animation-duration, 1s);
+      animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+      animation-timing-function: var(--fa-animation-timing, cubic-bezier(0.4, 0, 0.6, 1));
+    }
+
+    .fa-flip {
+      animation-name: fa-flip;
+      animation-delay: var(--fa-animation-delay, 0s);
+      animation-direction: var(--fa-animation-direction, normal);
+      animation-duration: var(--fa-animation-duration, 1s);
+      animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+      animation-timing-function: var(--fa-animation-timing, ease-in-out);
+    }
+
+    .fa-shake {
+      animation-name: fa-shake;
+      animation-delay: var(--fa-animation-delay, 0s);
+      animation-direction: var(--fa-animation-direction, normal);
+      animation-duration: var(--fa-animation-duration, 1s);
+      animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+      animation-timing-function: var(--fa-animation-timing, linear);
+    }
+
+    .fa-spin {
+      animation-name: fa-spin;
+      animation-delay: var(--fa-animation-delay, 0s);
+      animation-direction: var(--fa-animation-direction, normal);
+      animation-duration: var(--fa-animation-duration, 2s);
+      animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+      animation-timing-function: var(--fa-animation-timing, linear);
+    }
+
+    .fa-spin-reverse {
+      --fa-animation-direction: reverse;
+    }
+
+    .fa-pulse,
+    .fa-spin-pulse {
+      animation-name: fa-spin;
+      animation-direction: var(--fa-animation-direction, normal);
+      animation-duration: var(--fa-animation-duration, 1s);
+      animation-iteration-count: var(--fa-animation-iteration-count, infinite);
+      animation-timing-function: var(--fa-animation-timing, steps(8));
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .fa-beat,
+      .fa-bounce,
+      .fa-fade,
+      .fa-beat-fade,
+      .fa-flip,
+      .fa-pulse,
+      .fa-shake,
+      .fa-spin,
+      .fa-spin-pulse {
+        animation-delay: -1ms;
+        animation-duration: 1ms;
+        animation-iteration-count: 1;
+        transition-delay: 0s;
+        transition-duration: 0s;
+      }
+    }
+
+    @keyframes fa-beat {
+
+      0%,
+      90% {
+        transform: scale(1);
+      }
+
+      45% {
+        transform: scale(var(--fa-beat-scale, 1.25));
+      }
+    }
+
+    @keyframes fa-bounce {
+      0% {
+        transform: scale(1) translateY(0px);
+      }
+
+      10% {
+        transform: scale(var(--fa-bounce-start-scale-x, 1.1), var(--fa-bounce-start-scale-y, 0.9)) translateY(0);
+      }
+
+      30% {
+        transform: scale(var(--fa-bounce-jump-scale-x, 0.9), var(--fa-bounce-jump-scale-y, 1.1)) translateY(var(--fa-bounce-height, -0.5em));
+      }
+
+      50% {
+        transform: scale(var(--fa-bounce-land-scale-x, 1.05), var(--fa-bounce-land-scale-y, 0.95)) translateY(0);
+      }
+
+      57% {
+        transform: scale(1, 1) translateY(var(--fa-bounce-rebound, -0.125em));
+      }
+
+      64% {
+        transform: scale(1) translateY(0px);
+      }
+
+      100% {
+        transform: scale(1) translateY(0px);
+      }
+    }
+
+    @keyframes fa-fade {
+      50% {
+        opacity: var(--fa-fade-opacity, 0.4);
+      }
+    }
+
+    @keyframes fa-beat-fade {
+
+      0%,
+      100% {
+        opacity: var(--fa-beat-fade-opacity, 0.4);
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(var(--fa-beat-fade-scale, 1.125));
+      }
+    }
+
+    @keyframes fa-flip {
+      50% {
+        transform: rotate3d(var(--fa-flip-x, 0), var(--fa-flip-y, 1), var(--fa-flip-z, 0), var(--fa-flip-angle, -180deg));
+      }
+    }
+
+    @keyframes fa-shake {
+      0% {
+        transform: rotate(-15deg);
+      }
+
+      4% {
+        transform: rotate(15deg);
+      }
+
+      8%,
+      24% {
+        transform: rotate(-18deg);
+      }
+
+      12%,
+      28% {
+        transform: rotate(18deg);
+      }
+
+      16% {
+        transform: rotate(-22deg);
+      }
+
+      20% {
+        transform: rotate(22deg);
+      }
+
+      32% {
+        transform: rotate(-12deg);
+      }
+
+      36% {
+        transform: rotate(12deg);
+      }
+
+      40%,
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+
+    @keyframes fa-spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    .fa-rotate-90 {
+      transform: rotate(90deg);
+    }
+
+    .fa-rotate-180 {
+      transform: rotate(180deg);
+    }
+
+    .fa-rotate-270 {
+      transform: rotate(270deg);
+    }
+
+    .fa-flip-horizontal {
+      transform: scale(-1, 1);
+    }
+
+    .fa-flip-vertical {
+      transform: scale(1, -1);
+    }
+
+    .fa-flip-both,
+    .fa-flip-horizontal.fa-flip-vertical {
+      transform: scale(-1);
+    }
+
+    .fa-rotate-by {
+      transform: rotate(var(--fa-rotate-angle, 0));
+    }
+
+    .fa-stack {
+      display: inline-block;
+      vertical-align: middle;
+      height: 2em;
+      position: relative;
+      width: 2.5em;
+    }
+
+    .fa-stack-1x,
+    .fa-stack-2x {
+      inset: 0px;
+      margin: auto;
+      position: absolute;
+      z-index: var(--fa-stack-z-index, auto);
+    }
+
+    .svg-inline--fa.fa-stack-1x {
+      height: 1em;
+      width: 1.25em;
+    }
+
+    .svg-inline--fa.fa-stack-2x {
+      height: 2em;
+      width: 2.5em;
+    }
+
+    .fa-inverse {
+      color: var(--fa-inverse, #fff);
+    }
+
+    .sr-only,
+    .fa-sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0px;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0px, 0px, 0px, 0px);
+      white-space: nowrap;
+      border-width: 0px;
+    }
+
+    .sr-only-focusable:not(:focus),
+    .fa-sr-only-focusable:not(:focus) {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0px;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0px, 0px, 0px, 0px);
+      white-space: nowrap;
+      border-width: 0px;
+    }
+
+    .svg-inline--fa .fa-primary {
+      fill: var(--fa-primary-color, currentColor);
+      opacity: var(--fa-primary-opacity, 1);
+    }
+
+    .svg-inline--fa .fa-secondary {
+      fill: var(--fa-secondary-color, currentColor);
+      opacity: var(--fa-secondary-opacity, 0.4);
+    }
+
+    .svg-inline--fa.fa-swap-opacity .fa-primary {
+      opacity: var(--fa-secondary-opacity, 0.4);
+    }
+
+    .svg-inline--fa.fa-swap-opacity .fa-secondary {
+      opacity: var(--fa-primary-opacity, 1);
+    }
+
+    .svg-inline--fa mask .fa-primary,
+    .svg-inline--fa mask .fa-secondary {
+      fill: black;
+    }
+  </style>
+  <link rel="stylesheet" href="css/72b2bd0f6d5f9137.css" data-precedence="next">
+  <link rel="stylesheet" href="css/fd28f4b9b5065dc2.css" data-precedence="next">
+  <meta name="next-size-adjust" content="">
+  <title>GalxAI</title>
+  <meta name="description" content="Quantum Particle">
+  <link rel="icon" href="images/favicon.png">
+  <style type="text/css" data-styled-jsx="">
+    @keyframes flash {
+
+      0%,
+      95%,
+      98%,
+      100% {
+        opacity: 1;
+      }
+
+      96%,
+      99% {
+        opacity: 0.5;
+      }
+    }
+
+    .flash {
+      animation: 10s infinite flash;
+    }
+
+    .flash-1 {
+      animation-delay: 1s;
+    }
+
+    .flash-2 {
+      animation-delay: 4s;
+    }
+
+    .flash-3 {
+      animation-delay: 7s;
+    }
+
+    .flash-4 {
+      animation-delay: 10s;
+    }
+  </style>
+  <script data-scrapbook-elem="custom-elements-loader">(function (names) { if (!customElements) { return; } for (const name of names) { customElements.define(name, class CustomElement extends HTMLElement { }); } })(["next-route-announcer"])</script>
+</head>
+
+<body class="__className_3757f2">
+  <div class="jsx-undefined min-h-screen bg-black text-[#00ff00] overflow-x-hidden __className_3757f2">
+    <div class="fixed w-full z-50 bg-black/80 backdrop-blur-lg py-1 border-b border-[#00ff00]/30">
+      <div class="container mx-auto px-6">
+        <div class="flex items-center py-3"><a class="text-xl md:text-2xl" href=""><img alt="AGENTZ" loading="lazy" width="180" height="60" decoding="async" data-nimg="1" class="object-contain h-12" style="color: transparent;" src="images/agenbtzaimainlogo.png"></a>
+          <div class="flex-1 flex items-center justify-center gap-6 mx-6"><a class="hover:text-[#00ff00] transition-colors" href="https://x.com/GalxAIcoin">TWITTER</a><a class="hover:text-[#00ff00] transition-colors" href="https://t.me/GalxAI_Official">TELEGRAM</a>
+            
+          </div>
+          <div class="flex items-center gap-6">
+            <div class="w-[200px] flex justify-end">
+              <a href="https://pump.fun/RFpPfd3h3nKYzTAAr7fN59UQ3jmocNDYit2VQK1nump" class="px-5 py-1.5 bg-[#00ff00]/10 border border-[#00ff00]/30
+                        hover:bg-[#00ff00]/20 hover:border-[#00ff00] transition-all 
+                        text-sm rounded-sm">
+                BUY
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="jsx-undefined fixed inset-0 z-0">
+      <div class="jsx-undefined absolute top-0 left-0 w-full h-full bg-[linear-gradient(0deg,rgba(0,255,0,0.1)_1px,transparent_1px)] bg-[size:100%_2px]">
+      </div>
+      <div class="jsx-undefined absolute inset-0 bg-[radial-gradient(circle,transparent_20%,black_100%)]"></div>
+    </div>
+    <section class="jsx-undefined relative h-screen flex items-center z-10">
+      
+      <div class="jsx-undefined container mx-auto px-6 text-center relative z-10">
+        <div class="jsx-undefined space-y-8 backdrop-blur-md bg-black/30 p-8 rounded-lg border border-[#00ff00]/20">
+          <div class="jsx-undefined inline-block px-4 py-2 border border-[#00ff00] bg-black/50 hover:bg-[#00ff00]/10 transition-all">
+            <a href="https://pump.fun/RFpPfd3h3nKYzTAAr7fN59UQ3jmocNDYit2VQK1nump" target="_blank" rel="noopener noreferrer" class="jsx-undefined text-[#00ff00] text-xs hover:text-white transition-colors">RFpPfd3h3nKYzTAAr7fN59UQ3jmocNDYit2VQK1nump</a></div>
+          <h1 class="jsx-undefined text-5xl md:text-7xl leading-relaxed"><span class="jsx-undefined flash flash-1">GalxAI</span><span class="jsx-undefined flash flash-3"></span><span class="jsx-undefined block mt-2 text-[#00ff00] flash flash-4">AI-AGENT</span><span class="jsx-undefined block mt-2 text-sm md:text-xl">YOUR 24/7 CRYPTO COMPANION</span></h1>
+          
+          <div class="jsx-undefined flex justify-center gap-6"><a class="px-8 py-3 bg-[#00ff00] text-black text-sm hover:bg-[#00ff00]/80 transition-colors" href="https://pump.fun/RFpPfd3h3nKYzTAAr7fN59UQ3jmocNDYit2VQK1nump">BUY</a><a class="px-8 py-3 border border-[#00ff00] text-[#00ff00] text-sm hover:bg-[#00ff00] hover:text-black transition-colors" href="https://x.com/GalxAIcoin">LEARN MORE</a></div>
+        </div>
+      </div>
+    </section>
+    
+    
+    <div class="w-full py-8 flex justify-center">
+      <div class="w-1/2 h-[1px] bg-gradient-to-r from-transparent via-[#00ff00]/20 to-transparent animate-pulse"></div>
+    </div>
+    <section id="features" class="jsx-undefined relative py-6 z-10">
+      <div class="jsx-undefined container mx-auto px-6">
+        <h2 class="jsx-undefined text-center text-2xl md:text-3xl mb-4">FEATURES <span class="jsx-undefined animate-pulse">|</span></h2>
+        <div class="jsx-undefined grid md:grid-cols-3 gap-4">
+          <div class="jsx-undefined border border-[#00ff00] bg-black/50 p-6 hover:bg-black/80 transition-all">
+            <div class="jsx-undefined mb-4"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="robot" class="svg-inline--fa fa-robot text-[#00ff00] w-8 h-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                <path fill="currentColor" d="M320 0c17.7 0 32 14.3 32 32l0 64 120 0c39.8 0 72 32.2 72 72l0 272c0 39.8-32.2 72-72 72l-304 0c-39.8 0-72-32.2-72-72l0-272c0-39.8 32.2-72 72-72l120 0 0-64c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16l32 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-32 0zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l32 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-32 0zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16l32 0c8.8 0 16-7.2 16-16s-7.2-16-16-16l-32 0zM264 256a40 40 0 1 0 -80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224l16 0 0 192-16 0c-26.5 0-48-21.5-48-48l0-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48l0 96c0 26.5-21.5 48-48 48l-16 0 0-192 16 0z">
+                </path>
+              </svg></div>
+            <h3 class="jsx-undefined text-xl mb-4">Platform Integration</h3>
+            <p class="jsx-undefined text-sm text-[#00ff00]/70">Deploy your bot on Telegram or Discord. Seamlessly
+              interact with users through popular messaging platforms with built-in API support.</p>
+          </div>
+          <div class="jsx-undefined border border-[#00ff00] bg-black/50 p-6 hover:bg-black/80 transition-all">
+            <div class="jsx-undefined mb-4"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="plug" class="svg-inline--fa fa-plug text-[#00ff00] w-8 h-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                <path fill="currentColor" d="M96 0C78.3 0 64 14.3 64 32l0 96 64 0 0-96c0-17.7-14.3-32-32-32zM288 0c-17.7 0-32 14.3-32 32l0 96 64 0 0-96c0-17.7-14.3-32-32-32zM32 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l0 32c0 77.4 55 142 128 156.8l0 67.2c0 17.7 14.3 32 32 32s32-14.3 32-32l0-67.2C297 398 352 333.4 352 256l0-32c17.7 0 32-14.3 32-32s-14.3-32-32-32L32 160z">
+                </path>
+              </svg></div>
+            <h3 class="jsx-undefined text-xl mb-4">API Integration</h3>
+            <p class="jsx-undefined text-sm text-[#00ff00]/70">Connect to major exchanges (Binance, Coinbase) and data
+              providers (CoinGecko, CryptoCompare) with secure API management.</p>
+          </div>
+          <div class="jsx-undefined border border-[#00ff00] bg-black/50 p-6 hover:bg-black/80 transition-all">
+            <div class="jsx-undefined mb-4"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="gears" class="svg-inline--fa fa-gears text-[#00ff00] w-8 h-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                <path fill="currentColor" d="M308.5 135.3c7.1-6.3 9.9-16.2 6.2-25c-2.3-5.3-4.8-10.5-7.6-15.5L304 89.4c-3-5-6.3-9.9-9.8-14.6c-5.7-7.6-15.7-10.1-24.7-7.1l-28.2 9.3c-10.7-8.8-23-16-36.2-20.9L199 27.1c-1.9-9.3-9.1-16.7-18.5-17.8C173.9 8.4 167.2 8 160.4 8l-.7 0c-6.8 0-13.5 .4-20.1 1.2c-9.4 1.1-16.6 8.6-18.5 17.8L115 56.1c-13.3 5-25.5 12.1-36.2 20.9L50.5 67.8c-9-3-19-.5-24.7 7.1c-3.5 4.7-6.8 9.6-9.9 14.6l-3 5.3c-2.8 5-5.3 10.2-7.6 15.6c-3.7 8.7-.9 18.6 6.2 25l22.2 19.8C32.6 161.9 32 168.9 32 176s.6 14.1 1.7 20.9L11.5 216.7c-7.1 6.3-9.9 16.2-6.2 25c2.3 5.3 4.8 10.5 7.6 15.6l3 5.2c3 5.1 6.3 9.9 9.9 14.6c5.7 7.6 15.7 10.1 24.7 7.1l28.2-9.3c10.7 8.8 23 16 36.2 20.9l6.1 29.1c1.9 9.3 9.1 16.7 18.5 17.8c6.7 .8 13.5 1.2 20.4 1.2s13.7-.4 20.4-1.2c9.4-1.1 16.6-8.6 18.5-17.8l6.1-29.1c13.3-5 25.5-12.1 36.2-20.9l28.2 9.3c9 3 19 .5 24.7-7.1c3.5-4.7 6.8-9.5 9.8-14.6l3.1-5.4c2.8-5 5.3-10.2 7.6-15.5c3.7-8.7 .9-18.6-6.2-25l-22.2-19.8c1.1-6.8 1.7-13.8 1.7-20.9s-.6-14.1-1.7-20.9l22.2-19.8zM112 176a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zM504.7 500.5c6.3 7.1 16.2 9.9 25 6.2c5.3-2.3 10.5-4.8 15.5-7.6l5.4-3.1c5-3 9.9-6.3 14.6-9.8c7.6-5.7 10.1-15.7 7.1-24.7l-9.3-28.2c8.8-10.7 16-23 20.9-36.2l29.1-6.1c9.3-1.9 16.7-9.1 17.8-18.5c.8-6.7 1.2-13.5 1.2-20.4s-.4-13.7-1.2-20.4c-1.1-9.4-8.6-16.6-17.8-18.5L583.9 307c-5-13.3-12.1-25.5-20.9-36.2l9.3-28.2c3-9 .5-19-7.1-24.7c-4.7-3.5-9.6-6.8-14.6-9.9l-5.3-3c-5-2.8-10.2-5.3-15.6-7.6c-8.7-3.7-18.6-.9-25 6.2l-19.8 22.2c-6.8-1.1-13.8-1.7-20.9-1.7s-14.1 .6-20.9 1.7l-19.8-22.2c-6.3-7.1-16.2-9.9-25-6.2c-5.3 2.3-10.5 4.8-15.6 7.6l-5.2 3c-5.1 3-9.9 6.3-14.6 9.9c-7.6 5.7-10.1 15.7-7.1 24.7l9.3 28.2c-8.8 10.7-16 23-20.9 36.2L315.1 313c-9.3 1.9-16.7 9.1-17.8 18.5c-.8 6.7-1.2 13.5-1.2 20.4s.4 13.7 1.2 20.4c1.1 9.4 8.6 16.6 17.8 18.5l29.1 6.1c5 13.3 12.1 25.5 20.9 36.2l-9.3 28.2c-3 9-.5 19 7.1 24.7c4.7 3.5 9.5 6.8 14.6 9.8l5.4 3.1c5 2.8 10.2 5.3 15.5 7.6c8.7 3.7 18.6 .9 25-6.2l19.8-22.2c6.8 1.1 13.8 1.7 20.9 1.7s14.1-.6 20.9-1.7l19.8 22.2zM464 304a48 48 0 1 1 0 96 48 48 0 1 1 0-96z">
+                </path>
+              </svg></div>
+            <h3 class="jsx-undefined text-xl mb-4">Trading Configuration</h3>
+            <p class="jsx-undefined text-sm text-[#00ff00]/70">Set up advanced trading parameters including position
+              sizing, stop-loss defaults, timeframes, and risk management rules.</p>
+          </div>
+          <div class="jsx-undefined border border-[#00ff00] bg-black/50 p-6 hover:bg-black/80 transition-all">
+            <div class="jsx-undefined mb-4"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="code" class="svg-inline--fa fa-code text-[#00ff00] w-8 h-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+                <path fill="currentColor" d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6zm80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3L562.7 256l-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3z">
+                </path>
+              </svg></div>
+            <h3 class="jsx-undefined text-xl mb-4">Bot Behavior</h3>
+            <p class="jsx-undefined text-sm text-[#00ff00]/70">Customize commands, triggers, and response styles. Define
+              how your bot interacts with users and responds to events.</p>
+          </div>
+          <div class="jsx-undefined border border-[#00ff00] bg-black/50 p-6 hover:bg-black/80 transition-all">
+            <div class="jsx-undefined mb-4"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="lock" class="svg-inline--fa fa-lock text-[#00ff00] w-8 h-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                <path fill="currentColor" d="M144 144l0 48 160 0 0-48c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192l0-48C80 64.5 144.5 0 224 0s144 64.5 144 144l0 48 16 0c35.3 0 64 28.7 64 64l0 192c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 256c0-35.3 28.7-64 64-64l16 0z">
+                </path>
+              </svg></div>
+            <h3 class="jsx-undefined text-xl mb-4">Security & Access</h3>
+            <p class="jsx-undefined text-sm text-[#00ff00]/70">Control user access levels, set permissions, and manage
+              backup frequencies. Keep your bot and users secure.</p>
+          </div>
+          <div class="jsx-undefined border border-[#00ff00] bg-black/50 p-6 hover:bg-black/80 transition-all">
+            <div class="jsx-undefined mb-4"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="message" class="svg-inline--fa fa-message text-[#00ff00] w-8 h-8" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path fill="currentColor" d="M64 0C28.7 0 0 28.7 0 64L0 352c0 35.3 28.7 64 64 64l96 0 0 80c0 6.1 3.4 11.6 8.8 14.3s11.9 2.1 16.8-1.5L309.3 416 448 416c35.3 0 64-28.7 64-64l0-288c0-35.3-28.7-64-64-64L64 0z">
+                </path>
+              </svg></div>
+            <h3 class="jsx-undefined text-xl mb-4">Custom Responses</h3>
+            <p class="jsx-undefined text-sm text-[#00ff00]/70">Personalize welcome messages, error handling, and success
+              notifications. Make your bot's communication style unique.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="w-full py-8 flex justify-center">
+      <div class="w-1/2 h-[1px] bg-gradient-to-r from-transparent via-[#00ff00]/20 to-transparent animate-pulse"></div>
+    </div>
+    <section class="jsx-undefined relative py-12 z-10 bg-black/30">
+      <div class="jsx-undefined container mx-auto px-6">
+        <h2 class="jsx-undefined text-center text-2xl md:text-3xl mb-8">USE CASES <span class="jsx-undefined animate-pulse">|</span></h2>
+        <div class="jsx-undefined grid md:grid-cols-4 gap-6">
+          <div class="jsx-undefined border border-[#00ff00] p-6 bg-black/50">
+            <h3 class="jsx-undefined text-xl mb-4">Creative Collaborator</h3>
+            <ul class="jsx-undefined text-sm text-[#00ff00]/70 space-y-2">
+              <li class="jsx-undefined">• Idea Generation</li>
+              <li class="jsx-undefined">• Content Drafting</li>
+              <li class="jsx-undefined">• Creative Feedback</li>
+              <li class="jsx-undefined">• Storyboarding</li>
+            </ul>
+          </div>
+          <div class="jsx-undefined border border-[#00ff00] p-6 bg-black/50">
+            <h3 class="jsx-undefined text-xl mb-4">CPersonal Assistant</h3>
+            <ul class="jsx-undefined text-sm text-[#00ff00]/70 space-y-2">
+              <li class="jsx-undefined">• Schedule Management</li>
+              <li class="jsx-undefined">• Task Prioritization</li>
+              <li class="jsx-undefined">• Goal Tracking</li>
+              <li class="jsx-undefined">• Reminder Alerts</li>
+            </ul>
+          </div>
+          <div class="jsx-undefined border border-[#00ff00] p-6 bg-black/50">
+            <h3 class="jsx-undefined text-xl mb-4">Education Partner</h3>
+            <ul class="jsx-undefined text-sm text-[#00ff00]/70 space-y-2">
+              <li class="jsx-undefined">• Learning Assistance</li>
+              <li class="jsx-undefined">• Quiz Generation</li>
+              <li class="jsx-undefined">• Knowledge Summaries</li>
+              <li class="jsx-undefined">• Interactive Lessons</li>
+            </ul>
+          </div>
+          <div class="jsx-undefined border border-[#00ff00] p-6 bg-black/50">
+            <h3 class="jsx-undefined text-xl mb-4">Innovation Guide</h3>
+            <ul class="jsx-undefined text-sm text-[#00ff00]/70 space-y-2">
+              <li class="jsx-undefined">• Concept Prototyping</li>
+              <li class="jsx-undefined">• Innovation Mapping</li>
+              <li class="jsx-undefined">• Feasibility Checks</li>
+              <li class="jsx-undefined">• Process Optimization</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <div class="w-full py-8 flex justify-center">
+      <div class="w-1/2 h-[1px] bg-gradient-to-r from-transparent via-[#00ff00]/20 to-transparent animate-pulse"></div>
+    </div>
+    <section class="jsx-undefined relative py-12 z-10">
+      <div class="jsx-undefined container mx-auto px-6">
+        <h2 class="jsx-undefined text-center text-2xl md:text-3xl mb-8">PLATFORM STATS <span class="jsx-undefined animate-pulse">|</span></h2>
+        <div class="jsx-undefined grid md:grid-cols-4 gap-8 text-center">
+          <div class="jsx-undefined space-y-2">
+            <div class="jsx-undefined text-4xl font-bold text-[#00ff00]">24/7</div>
+            <div class="jsx-undefined text-sm text-[#00ff00]/70">Uptime</div>
+          </div>
+          <div class="jsx-undefined space-y-2">
+            <div class="jsx-undefined text-4xl font-bold text-[#00ff00]">100ms</div>
+            <div class="jsx-undefined text-sm text-[#00ff00]/70">Response Time</div>
+          </div>
+          <div class="jsx-undefined space-y-2">
+            <div class="jsx-undefined text-4xl font-bold text-[#00ff00]">200+</div>
+            <div class="jsx-undefined text-sm text-[#00ff00]/70">Customizable Workflows</div>
+          </div>
+          <div class="jsx-undefined space-y-2">
+            <div class="jsx-undefined text-4xl font-bold text-[#00ff00]">500K+</div>
+            <div class="jsx-undefined text-sm text-[#00ff00]/70">Simulated Daily Tasks
+              (Scalable Based on Deployment)</div>
+          </div>
+        </div>
+        <div class="jsx-undefined text-center text-xs text-[#00ff00]/50 mt-4 italic">* DEPENDING ON APIs CONFIGURED
+        </div>
+      </div>
+    </section>
+    <div class="w-full py-8 flex justify-center">
+      <div class="w-1/2 h-[1px] bg-gradient-to-r from-transparent via-[#00ff00]/20 to-transparent animate-pulse"></div>
+    </div>
+    <section class="jsx-undefined relative py-6 z-10">
+      <div class="jsx-undefined container mx-auto px-6 text-center">
+        <h2 class="jsx-undefined text-2xl md:text-3xl mb-8">JOIN THE GALXAI <span class="jsx-undefined animate-pulse">|</span></h2>
+        <div class="jsx-undefined flex justify-center gap-6"><a class="px-12 py-4 bg-[#00ff00] text-black text-lg hover:bg-[#00ff00]/80 transition-colors" href="https://pump.fun/RFpPfd3h3nKYzTAAr7fN59UQ3jmocNDYit2VQK1nump">BUY</a><a class="px-12 py-4 border border-[#00ff00] text-[#00ff00] text-lg hover:bg-[#00ff00] hover:text-black transition-colors" href="https://t.me/GalxAI_Official">TELEGRAM</a></div>
+      </div>
+    </section>
+  </div>
+  <next-route-announcer style="position: absolute;"></next-route-announcer>
+  <script data-scrapbook-elem="basic-loader">(function () { var k1 = "data-scrapbook-shadowdom", k2 = "data-scrapbook-canvas", k3 = "data-scrapbook-input-indeterminate", k4 = "data-scrapbook-input-checked", k5 = "data-scrapbook-option-selected", k6 = "data-scrapbook-input-value", k7 = "data-scrapbook-textarea-value", k8 = "data-scrapbook-adoptedstylesheets", k9 = /^data-scrapbook-adoptedstylesheet-(\d+)$/, k10 = "data-scrapbook-shadowdom-mode", k11 = "data-scrapbook-shadowdom-clonable", k12 = "data-scrapbook-shadowdom-delegates-focus", k13 = "data-scrapbook-shadowdom-serializable", k14 = "data-scrapbook-shadowdom-slot-assignment", k15 = "data-scrapbook-slot-assigned", k16 = "data-scrapbook-slot-index", k17 = /^scrapbook-slot-index=(\d+)$/; k18 = '/scrapbook-slot-index'; d = document, r = d.documentElement, $s = !!r.attachShadow, $as = !!d.adoptedStyleSheets, $c = !!window.HTMLCanvasElement, $sa = !!d.createElement('slot').assign, sle = [], sls = [], slt = function (r) { if ($sa) { var E = r.childNodes, i, e, s, m; for (i = 0; i < E.length; i++) { e = E[i]; if (e.nodeType === 8) { s = e.nodeValue; if (m = s.match(k17)) { s = e.nextSibling; if (s.nodeType === 3) { sls[m[1]] = s; } r.removeChild(e); i--; } else if (s === k18) { r.removeChild(e); i--; } } } } }, sl = function () { var i = sle.length, j, d, e; while (i--) { d = sle[i]; e = d.elem; d = d.value.split(','); j = d.length; while (j--) { d[j] = sls[parseInt(d[j], 10)]; } try { e.assign.apply(e, d); } catch (ex) { console.error(ex); } } }, asl = (function (r) { var l = [], E, i, e, m, c, j; if ($as) { E = r.attributes; i = E.length; while (i--) { e = E[i]; if (!(m = e.nodeName.match(k9))) { continue; } c = l[m[1]] = new CSSStyleSheet(); r.removeAttribute(m[0]); m = e.nodeValue.split('\n\n'); j = m.length; while (j--) { try { m[j] && c.insertRule(m[j]); } catch (ex) { console.error(ex); } } } } return l; })(r), as = function (d, e) { var l, i, I; if ($as && (l = e.getAttribute(k8)) !== null) { l = l.split(','); for (i = 0, I = l.length; i < I; i++) { d.adoptedStyleSheets.push(asl[l[i]]); } e.removeAttribute(k8); } }, fn = function (r) { var E = r.querySelectorAll ? r.querySelectorAll("*") : r.getElementsByTagName("*"), i = E.length, e, d, s, m; while (i--) { e = E[i]; s = e.shadowRoot; if ($s && (d = e.getAttribute(k1))) { if (!s) { try { s = e.attachShadow({ mode: (m = e.getAttribute(k10)) !== null ? m : 'open', clonable: e.hasAttribute(k11), delegatesFocus: e.hasAttribute(k12), serializable: e.hasAttribute(k13), slotAssignment: (m = e.getAttribute(k14)) !== null ? m : void (0), }); s.innerHTML = d; } catch (ex) { console.error(ex); } } e.removeAttribute(k1); e.removeAttribute(k10); e.removeAttribute(k11); e.removeAttribute(k12); e.removeAttribute(k13); e.removeAttribute(k14); } if ($c && (d = e.getAttribute(k2)) !== null) { (function () { var c = e, g = new Image(); g.onload = function () { c.getContext('2d').drawImage(g, 0, 0); }; g.src = d; })(); e.removeAttribute(k2); } if ((d = e.getAttribute(k3)) !== null) { e.indeterminate = true; e.removeAttribute(k3); } if ((d = e.getAttribute(k4)) !== null) { e.checked = d === 'true'; e.removeAttribute(k4); } if ((d = e.getAttribute(k5)) !== null) { e.selected = d === 'true'; e.removeAttribute(k5); } if ((d = e.getAttribute(k6)) !== null) { e.value = d; e.removeAttribute(k6); } if ((d = e.getAttribute(k7)) !== null) { e.value = d; e.removeAttribute(k7); } if ($sa && (d = e.getAttribute(k15)) !== null) { sle.push({ elem: e, value: d }); e.removeAttribute(k15); } if ($sa && (d = e.getAttribute(k16)) !== null) { sls[d] = e; e.removeAttribute(k16); } if (s) { slt(e); as(s, e); fn(s); } } }; as(d, r); fn(d); sl(); })()</script>
+
+
+</body></html>
